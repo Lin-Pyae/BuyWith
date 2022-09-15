@@ -1,0 +1,186 @@
+:root{
+    --primary: #f3d2b3;
+    --secondary:#dda7b0;
+}
+
+*{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+/* main body */
+body{
+    background-color: var(--primary);
+    transition: all 0.4s;
+}
+
+body.body{
+    margin-left: 150px;
+    transition:all 0.4s;
+}
+
+/* header start */
+header{
+    /* background-color: #f1f1f1; */
+    background-color: var(--primary);
+}
+/* sidebar */
+.sidebars{
+    width:200px;
+    height:100%;
+    background-color: var(--primary);
+    position:fixed;
+    left:0px;
+    transition: all 0.4s;
+}
+
+.sidebars.styles{
+    left:-220px;
+    transition: all 0.4s;
+}
+
+.sidebars h3{
+    line-height: 50px;
+    background-color: var(--primary);
+    user-select: none;
+    margin-top: 3px ;
+}
+
+.sidebars ul{
+    margin-left: -10px;
+}
+
+.sidebars ul a{
+    width: 100%;
+    height: 100%;
+    line-height: 35px;
+    font-size: 18px;
+    color: #333;
+    padding-left: 20px;
+    display: block;
+}
+
+.sidebars ul li{
+    border-bottom: 2px solid rgba(88, 86, 86, 0.61);
+    background-color: var(--primary);
+    border-left-color: transparent;
+}
+
+.sidebars ul li:hover{
+    transition: all 0.3s;
+    background-color: #756d6d7a;
+    color:#f1f1f1 !important;
+}
+
+/* header */
+.headers{
+    min-height:60px;
+}
+
+.bars{
+    width:90px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 0px;
+    transition: all 0.4s;
+}
+
+.bars.styles{
+    margin-left: 150px;
+}
+
+.bars .btns{
+   position: absolute;
+   top:20px;
+}
+
+/* Profile */
+
+.profiles{
+    position:absolute;
+    right: 40px;
+}
+
+.profiles-details i{
+    margin-left:30px;
+}
+
+.profile-imgs,.logos{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    margin-left:30px;
+}
+
+/* Profile dropdown */
+.profile-imgs{
+    cursor:pointer;
+}
+
+.profile-drops{
+    margin-top: 15px;
+    margin-left: -60px;
+}
+
+.profile-drops .accounts{
+    margin-top: -6px;
+}
+
+/* header end */
+/* body start */
+.dividers{
+    background-color: #5a515138;
+    height: 3px;
+}
+
+.bodys{
+    background-color: var(--primary);
+}
+
+.bodys-details{
+    height:500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodys-details .animate__pulse{
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: all ease-in;
+}
+/* Tops */
+.tops{
+    bottom:30px;
+    left:2px;
+    border-radius: 50%;
+}
+
+.tops:active{
+    background-color: #443d3d;
+}
+
+/* shop request start */
+.shoprequests{
+    width:96%;
+    margin-left: 40px;
+}
+.shops img{
+    height: 250px;
+}
+
+.shops div{
+    background-color: var(--primary);
+}
+
+/* report start */
+.reports{
+    width: 90%;
+}
+
+

@@ -1,0 +1,46 @@
+:root{
+    --primary: #f3d2b3;
+    --secondary:#dda7b0;
+}
+
+*{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.adminroles{
+    height: 100vh;
+    background-color: var(--primary);
+    overflow-x:hidden;
+}
+
+.profile-edits{
+    box-sizing: border-box;
+}
+
+.form-edits{
+    transform:translateX(800px);
+    transition: all 0.5s;
+}
+
+.form-edits label{
+    color:black;
+    font-size: 18px;
+}
+
+.form-edits input::placeholder{
+    color:#ffffffe3;
+}
+
+.form-edits div input{
+    font-size: 17px;
+    color:#d60e5b;
+    border:2px solid #615f5f65;
+}
+
+.form-edits div label+input{
+    width: 300px;
+}
