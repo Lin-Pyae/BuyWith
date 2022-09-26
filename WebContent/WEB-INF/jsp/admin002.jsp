@@ -37,7 +37,7 @@
         <div class="sidebars styles " id="sidebar">
             <h3 class="text-center">Buy With</h3>
             <ul class="list-group mb-0">
-                <li class="list-group-item"><a href="/BuyWith/A10shop" class=""><i class="feather-shopping-cart me-2"></i>Shop</a></li>
+                <li class="list-group-item"><a href="/BuyWith/P10shop" class=""><i class="feather-shopping-cart me-2"></i>Shop</a></li>
                 <li class="list-group-item"><a href="/BuyWith/P1manage" class=""><i class="feather-shopping-bag "></i> Manage Product</a></li>
                 <li class="list-group-item"><a href="/BuyWith/A12setting" class=""><i class="feather-settings me-2"></i>Setting</a></li>
                 <li class="list-group-item"><a href="/BuyWith/A1signup" class=""><i class="feather-user me-2"></i>Add Admin</a></li>
@@ -103,148 +103,68 @@
     </div>
 
     <!-- Shop request -->
-    <div class="container-fluid col-lg-12 shoprequests mt-lg-1" id="shoprequest">
-        <div class="row">
-            <div class="col-3 shops ">
-                <div class="card">
-                         <img src='<c:url value="/resources/images/macrons1.jpg" ></c:url>'/>   
-                    <h4 class="card-header text-center">Macrons</h4>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="2000" /></li>
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="34" /></li>
-                            <li class="list-group-item text-center"> 
-                                <a href="#" class="btn btn-success bg-transparent text-success card-link">Update
-                                </a>
-                                <a href="#" class="btn btn-danger bg-transparent text-danger card-link">Remove
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3 shops ">
-                <div class="card">
-                        
-                         <img src='<c:url value="/resources/images/macrons2.jpg" ></c:url>'/>   
-                    <h4 class="card-header text-center">Macrons</h4>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="2000" /></li>
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="34" /></li>
-                            <li class="list-group-item text-center"> 
-                                <a href="#" class="btn btn-success bg-transparent text-success card-link">Update
-                                </a>
-                                <a href="#" class="btn btn-danger bg-transparent text-danger card-link">Remove
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3 shops ">
-                <div class="card">
-                       
-                        <img src='<c:url value="/resources/images/macrons3.jpg" ></c:url>'/>   
-                    <h4 class="card-header text-center">Macrons</h4>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="2000" /></li>
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="34" /></li>
-                            <li class="list-group-item text-center"> 
-                                <a href="#" class="btn btn-success bg-transparent text-success card-link">Update
-                                </a>
-                                <a href="#" class="btn btn-danger bg-transparent text-danger card-link">Remove
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3 shops ">
-                <div class="card">
-                       
-                         <img src='<c:url value="/resources/images/macrons4.jpg" ></c:url>'/>   
-                    <h4 class="card-header text-center">Macrons</h4>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="2000" /></li>
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="34" /></li>
-                            <li class="list-group-item text-center"> 
-                                <a href="#" class="btn btn-success bg-transparent text-success card-link">Update
-                                </a>
-                                <a href="#" class="btn btn-danger bg-transparent text-danger card-link">Remove
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3 shops ">
-                <div class="card">
-                        
-                         <img src='<c:url value="/resources/images/macrons5.jpg" ></c:url>'/>    
-                    <h4 class="card-header text-center">Macrons</h4>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="2000" /></li>
-                            <li class="list-group-item"><input type="text" class="form-control border-0 text-center" value="34" /></li>
-                            <li class="list-group-item text-center"> 
-                                <a href="#" class="btn btn-success bg-transparent text-success card-link">Update
-                                </a>
-                                <a href="#" class="btn btn-danger bg-transparent text-danger card-link">Remove
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    
+   
+   	
+      <form class="row g-3 mt-3 ms-2" action="/BuyWith/productsearch" method="get">
+      
+      <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden">Product ID</label>
+          <input type="text" name="product_id" class="form-control" id="inputPassword2" placeholder="Product ID">
         </div>
+      
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden">Product_Name</label>
+          <input type="text" name="product_name" class="form-control" id="inputPassword2" placeholder="Product Name">
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Category_Name</label>
+            <input type="text" name="category_name" class="form-control" id="inputPassword2" placeholder="Category Name">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-success mb-3">Search</button>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-secondary mb-3">Reset</button>
+        </div>
+      </form>	
+      
+      <div>
+      <table class="table table-striped" id="productTable">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+          <th scope="col">Product ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${list}" var="data">
+        
+        
+        
+          <tr>
+            <th scope="row">1</th>
+           <td>${data.product_id}</td>
+            <td>${data.product_name}</td>
+            <td>${data.category_name}</td>
+            <td>
+              <a href="/BuyWith/seemore/${data.product_id}"><button type="submit" class="btn btn-secondary mb-2">See More</button></a> ||
+              <a href="/BuyWith/Pdelete/${data.product_id}"><button type="submit" class="btn btn-secondary mb-2">Delete</button></a> 
+            </td>
+          </tr>
+          
+          </c:forEach>
+          
+          
+     
+        </tbody>
+      </table>
     </div>
 
-    <div class="dividers mt-2"></div>
-
-    <!-- Report -->
-    <h2 class="text-center" id="report">Suggestion Box</h2>
-    <div class="container-fluid mt-3 reports">
-        <table class="w-75 mx-auto table table-hover table-sm table-bordered text-center">
-            <thead>
-                <tr class="">
-                    <th class="w-25">Customer Name</th>
-                    <th class="">Suggestions</th>
-                    <!-- <th colspan="2" class="table-success border-0"></th> -->
-                </tr>    
-            </thead>
-            <tbody class="align-middle">
-                <tr>
-                    <td>Mike</td>
-                    <td class="text-danger">this shop is worst service!</td>
-                    
-                </tr>
-                <tr>
-                    <td>Mike</td>
-                    <td class="text-danger">this shop is worst service!</td>
-                </tr>
-                <tr>
-                    <td>Mike</td>
-                    <td class="text-danger">this shop is worst service!</td>
-                </tr>
-                <tr>
-                    <td>Mike</td>
-                    <td class="text-danger">this shop is worst service!</td>
-                </tr>
-                <tr>
-                    <td>Mike</td>
-                    <td class="text-danger">this shop is worst service!</td>
-                </tr>
-            </tbody>
             
-        </table>
-    </div>
 
     
 

@@ -23,10 +23,21 @@
     <div class="homeBtn"><a href="index.html"><img src='<c:url value="/resources/images/home icon.png" ></c:url>' title="Go to home page"/>   </a></div>
     <div class="homeBtn"><a href="index.html"><img src='<c:url value="/resources/images/back icon.png" ></c:url>' title="Go back"/></a>
     <div class="image_label">
-     <label for="file-ip-1" title="click here to insert photo">add photo</label>
-		<img id="image" style="width: 200px;height: 200px;background-image: url(icon.png);background-size: cover;border:none;" ><br>
-	<input type="text" name="product_name" placeholder="Enter Product Name" required="required"><br></div>
-
+    
+    <div class="addPhoto">
+    
+    <img id="image" style="width: 200px;height: 200px;background-image: url(icon.png);background-size: cover;border:none;" >
+    
+    <div>
+     <label for="file-ip-1" title="click here to insert photo" style="margin-top:83px; margin-left:176px">add photo</label>
+     <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" required="required">
+	</div>
+		
+		</div>
+		<br>
+	<input type="text" name="product_name" placeholder="Enter Product Name" required="required"><br>
+	
+	</div>
 
   
   <select name="category" id="category" style="width:277px;">
@@ -84,8 +95,7 @@ Toppers
   <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter description" required="required"></textarea>
   <br>
 
-    <!--<label for="file-ip-1" title="click here to insert photo">add photo</label>--->
-     <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" required="required">
+   
 
 
      <!---<div class="submit"><div class="submitBtn">--->

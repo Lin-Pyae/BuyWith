@@ -1,6 +1,9 @@
 package buywith.controller;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -71,6 +74,7 @@ public class AdminController {
 				
 			}
 		}
+		
 		model.addAttribute("message","Please check your data again!");
 		return "login001";
 	}
@@ -87,38 +91,50 @@ public class AdminController {
     //return "Welcome";
 	//}
 	
+	
 	@RequestMapping (value="/A6profile", method=RequestMethod.GET)
-	public String A6profile(ModelMap model) {
+	public ModelAndView A6profile(@ModelAttribute("admin") AdminBean admin,ModelMap model) {
+	
 		
-		ArrayList<AdminResponseDTO> list=dao.selectAllAdmins();
+		//List <AdminBean> a= new ArrayList<AdminBean>();
+		ArrayList <AdminResponseDTO> list= dao.selectAllAdmins();
 		model.addAttribute("list",list);
-		
-		return "admin003";
+
+		return new ModelAndView ("admin003","admin",new AdminBean());	
+		//return new ModelAndView ("admin003","admin",dao.selectOne(dto));
 	}
 	
-	@RequestMapping (value="/A7update/{admin_id}", method=RequestMethod.GET)
+	@RequestMapping(value="/A7update/{admin_id}", method=RequestMethod.GET)
 	public ModelAndView A7update(@PathVariable String admin_id) {
-		
 		AdminRequestDTO dto=new AdminRequestDTO();
 		dto.setAdmin_id(admin_id);
-		return new ModelAndView ("admin003","admin",new AdminBean());		
+		return new ModelAndView ("admin003","admin",dao.selectOneAdmins(dto));
+		
 	}
+	
+	
 	
 	@RequestMapping (value="/A8update", method=RequestMethod.POST)
 	public String A8update (@ModelAttribute("admin") AdminBean admin,ModelMap model) {
 		
-		AdminRequestDTO dto= new AdminRequestDTO();
-		dto.setAdmin_id(admin.getAdmin_id());
-		dto.setName(admin.getName());
-		dto.setEmail(admin.getEmail());
-		dto.setPassword(admin.getPassword());
-		int rs=dao.updateDataAdmins(dto);
-		if(rs==0) {
-			model.addAttribute("error","Update Failed");
-			return "admin003";
+		
+				AdminRequestDTO dto= new AdminRequestDTO();
+				//dto.setAdmin_id(admin.getAdmin_id());
+					dto.setAdmin_id(admin.getAdmin_id());
+					dto.setName(admin.getName());
+					dto.setEmail(admin.getEmail());
+					dto.setPassword(admin.getPassword());		
+			        int rs=dao.updateDataAdmins(dto);
+			        if(rs==0) {
+			        	model.addAttribute("error","Update Failed");
+						return "admin003";
+			       
+			}
+			        return ("admin002");
+			
 		}
-		return "redirect:/admin002";
-	}
+			
+			
 	
 	@RequestMapping (value="/A9aboutus", method=RequestMethod.GET)
 	public String ViewA9setting() {
@@ -149,6 +165,12 @@ public class AdminController {
 		return "admin002";
 	}
 	
+	@RequestMapping (value="/Ashop", method=RequestMethod.GET)
+	public String ViewAshop() {
+		
+		return "user002";
+	}
+
 	
 	
 	

@@ -9,12 +9,11 @@ public class ProductBean {
 	private String img1;
 	private String price;
 	private String added_date;
-	private String upate_date;
 	private String size;
-	private String color;
 	private String flavour;
 	private String topping;
-	private String description;
+	private String color;
+	private String descirption;
 	public String getProduct_id() {
 		return product_id;
 	}
@@ -57,12 +56,7 @@ public class ProductBean {
 	public void setAdded_date(String added_date) {
 		this.added_date = added_date;
 	}
-	public String getUpate_date() {
-		return upate_date;
-	}
-	public void setUpate_date(String upate_date) {
-		this.upate_date = upate_date;
-	}
+	
 	public String getSize() {
 		return size;
 	}
@@ -82,17 +76,17 @@ public class ProductBean {
 	public void setTopping(String topping) {
 		this.topping = topping;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	public String getFlavour() {
 		return flavour;
 	}
 	public void setFlavour(String flavour) {
 		this.flavour = flavour;
+	}
+	public String getDescirption() {
+		return descirption;
+	}
+	public void setDescirption(String descirption) {
+		this.descirption = descirption;
 	}
 	
 

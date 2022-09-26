@@ -25,7 +25,7 @@ import buywith.connection.GetConnection;
 
 		 public int insertDataAdmins(AdminRequestDTO dta) {
 	   	  int result=0;
-	       String sql = "insert into admins (admin_id,name,email,password)"
+	       String sql = "insert into admins (admin_id,name,email,password,role_)"
 	           + "values(?,?,?,?)";
 	       
 	       try {
@@ -82,7 +82,7 @@ import buywith.connection.GetConnection;
 	     }
 	     public AdminResponseDTO selectOneAdmins(AdminRequestDTO dto) {
 	         AdminResponseDTO res = new AdminResponseDTO();
-	         String sql="select * from admins where admin_id=?";
+	         String sql="select * from admins where admin_id";
 	         try {
 	 			PreparedStatement ps=con.prepareStatement(sql);
 	 			ps.setString(1, dto.getAdmin_id());
@@ -104,7 +104,7 @@ import buywith.connection.GetConnection;
 	       }
 	     
 	     public ArrayList<AdminResponseDTO>selectAllAdmins(){
-	   	  ArrayList<AdminResponseDTO> list=new ArrayList<AdminResponseDTO>();
+	   	  ArrayList<AdminResponseDTO> list=new ArrayList<>();
 	   	  String sql="select * from admins";
 	   	  System.out.println("success");
 	   	  try {

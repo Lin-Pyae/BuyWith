@@ -74,7 +74,7 @@ w3-large a.macron:hover{
     <h3 class="w3-wide" style="position:relative; top:7px"><b>LOGO</b></h3>
   </div>
   <div class=" w3-large w3-text-black w3-light-grey" style="font-weight:bold; padding-top:3px">
-    <a href="/BuyWith/A10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="background-color: #f3d2b3!important;color: black!important; margin-top: -3px;">Birthday Cakes</a>
+    <a href="/BuyWith/P10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="background-color: #f3d2b3!important;color: black!important; margin-top: -3px;">Birthday Cakes</a>
     <a href="/BuyWith/P6cup" class="w3-bar-item w3-button sidebar_item">Cupcakes</a>
     <a href="/BuyWith/P7dessert" class="w3-bar-item w3-button sidebar_item">Desserts</a>
     <a href="/BuyWith/P8marcon" class="w3-bar-item w3-button sidebar_item macron" style="background-color: #e91e63;color:white;">Macrons</a>

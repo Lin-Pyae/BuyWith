@@ -2,6 +2,7 @@ package buywith.persistant.dto;
 
 public class ProductResponseDTO {
 
+	private String category_name;
 	private String product_id;
 	private String categories_category_id;
 	private String product_name;
@@ -9,12 +10,11 @@ public class ProductResponseDTO {
 	private String img1;
 	private double price;
 	private String added_date;
-	private String upate_date;
 	private String size;
-	private String color;
 	private String flavour;
 	private String topping;
-	private String description;
+	private String color;
+	private String descirption;
 	public String getProduct_id() {
 		return product_id;
 	}
@@ -52,12 +52,6 @@ public class ProductResponseDTO {
 	public void setAdded_date(String added_date) {
 		this.added_date = added_date;
 	}
-	public String getUpate_date() {
-		return upate_date;
-	}
-	public void setUpate_date(String upate_date) {
-		this.upate_date = upate_date;
-	}
 	public String getSize() {
 		return size;
 	}
@@ -77,12 +71,6 @@ public class ProductResponseDTO {
 	public void setTopping(String topping) {
 		this.topping = topping;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	public String getFlavour() {
 		return flavour;
 	}
@@ -94,6 +82,18 @@ public class ProductResponseDTO {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public String getDescirption() {
+		return descirption;
+	}
+	public void setDescirption(String descirption) {
+		this.descirption = descirption;
+	}
+	public String getCategory_name() {
+		return category_name;
+	}
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
 	}
 	
 	

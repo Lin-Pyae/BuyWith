@@ -1,7 +1,11 @@
 package buywith.model;
 
+//import org.springframework.context.annotation.Scope;
+
+//@Scope("session")
 public class AdminBean {
 
+	
 	private String admin_id;
 	private String name;
 	private String email;

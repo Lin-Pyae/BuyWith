@@ -52,9 +52,9 @@
             </div>
             <a href="/BuyWith/A10help">General</a>
 
-            <a href="AboutUs.html">About Us</a>
+            <a href="/BuyWith/A9aboutus">About Us</a>
 
-            <a href="/BuyWith/A10shop">Home</a>
+            <a href="/BuyWith/P10shop">Home</a>
 
             <a href="/BuyWith/A12setting">Setting</a>
         </div>

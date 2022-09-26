@@ -80,7 +80,7 @@ body{
     <h3 class="w3-wide" style="position:relative; top:7px"><b>LOGO</b></h3>
   </div>
   <div class=" w3-large w3-text-black w3-light-grey" style="font-weight:bold; padding-top:3px">
-    <a href="/BuyWith/A10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="margin-top:-3px; background-color: #e91e63!important;">Birthday Cakes</a>
+    <a href="/BuyWith/P10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="margin-top:-3px; background-color: #e91e63!important;">Birthday Cakes</a>
     <a href="/BuyWith/P6cup" class="w3-bar-item w3-button sidebar_item">Cupcakes</a>
     <a href="/BuyWith/P7dessert" class="w3-bar-item w3-button sidebar_item">Desserts</a>
     <a href="/BuyWith/P8marcon" class="w3-bar-item w3-button sidebar_item">Macrons</a>
@@ -361,12 +361,36 @@ body{
   
 
   <!-- Product grid -->
-  <div class="w3-row ">
+  
+  	
+  
+  			<div class="w3-row">
+  			<c:forEach items="${bd}" var="cake">
+  			<div class="w3-col l3 s6">
+  			<div class="w3-container">
+  			<div class="w3-display-container">
+  			<img src="/resorces/images/${img1}"  class="img" width="100%"/>
+  			 <div class="w3-display-middle w3-display-hover ">
+  			<a href="admin005.jsp"><button class="w3-button w3-pink">Select options</i></button></a>
+  			</div>
+  			</div>
+  			</div>
+  			<p><b>${cake.product_name}</b><br>
+  			<b>${cake.price}</b></p><br>
+  			</div>
+  			 </c:forEach> 
+  			</div>
+  
+  		
+  		
+  		
+  		
+  		
+  		 <div class="w3-row ">
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-       
-        <img src='<c:url value="/resources/images/cake1.jpg" ></c:url>' class="img"  style="width:100%"/>
+          <img src="./shop page/cake1.jpg" class="img"  style="width:100%">
          <div class="w3-display-middle w3-display-hover ">
             <a href="order.html"><button class="w3-button w3-pink">Select options</i></button>
             </a>
@@ -374,172 +398,27 @@ body{
       </div>
         <p><b>Cake1</b><br><b>25000MMK</b></p>
       </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake2.jpg" class="img" style="width:100%">
-        <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</button></a>
-          </div>
       </div>
-        <p><b>Cake2</b><br><b>52000MMK</b></p>
-      </div>
-  
-     <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="./shop page/cake3.jpg" class="img" style="width:100%">
-          <span class="w3-tag w3-display-topleft w3-yellow">New</span>
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</i></button></a>
-          </div>
-        </div>
-        <p><b>Cake3</b><br><b>35000MMK</b></p>
-      </div>
-    
-      <div class="w3-container">
-         <div class="w3-display-container">
-         <img src="./shop page/cake4.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-       </div>
-        <p><b>Cake4</b><br><b>60000MMK</b></p>
-      </div>
-    </div>
-
-     <div class="w3-col l3 s6">  
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake5.jpg" class="img" style="width:100%">
-        <span class="w3-tag w3-display-topleft w3-yellow">New</span>
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake5</b><br><b>2500MMK</b></p>
-      </div>
+  		    
+  		
+  		
+  		 
+  		 
+  		
+  	
+  		
+       
+         
+            
+           
       
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake6.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake6</b><br><b class="w3-text-black">22000MMK</b></p>
-      </div>
-  
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake7.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake7</b><br><b class="w3-text-black">30000MMK</b></p>
-      </div>
-
-      <div class="w3-container">
-       <div class="w3-display-container">
-        <img src="./shop page/cake8.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake8<br></b><b>41000MMK</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake9.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake9<br></b><b class="w3-text-black">45000MMK</b></p>
-      </div>
-   
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake10.jpg" class="img" style="width:100%">
-        <span class="w3-tag w3-display-topleft w3-yellow">New</span>
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"> <button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake10</b><br><b class="w3-text-black">35000MMK</b></p>
-      </div>
-
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake11.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake11</b><br><b class="w3-text-black">30000MMK</b></p>
-      </div>
-    
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake12.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-         </div>
-        <p><b>Cake12</b><br><b class="w3-text-black">25000MMK</b></p>
-      </div>
-    </div>
-
-     <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake13.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake13</b><br><b class="w3-text-black">30000MMK</b></p>
-      </div>
-   
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake14.jpg" class="img" style="width:100%">
-        <span class="w3-tag w3-display-topleft w3-yellow">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake14</b><br><b class="w3-text-black">75000MMK</b></p>
-      </div>
-
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake15.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-      </div>
-        <p><b>Cake15</b><br><b class="w3-text-black">70000MMK</b></p>
-      </div>
-    
-      <div class="w3-container">
-        <div class="w3-display-container">
-        <img src="./shop page/cake16.jpg" class="img" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-           <a href="order.html"><button class="w3-button w3-pink">Select options</button></a>
-          </div>
-         </div>
-        <p><b>Cake16</b><br><b class="w3-text-black">40000MMK</b></p>
-      </div>
-    </div>
-  </div>
-   
-
-  
- 
- 
+        <p><b>Cake1</b><br><b>25000MMK</b></p><br>
+       
+         
+        
+     
+      
+     
   <!-- Footer -->
 
   <footer  class="footer">

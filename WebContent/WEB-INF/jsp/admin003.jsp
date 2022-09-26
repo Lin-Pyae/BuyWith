@@ -29,58 +29,7 @@
      <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
      <link rel="stylesheet" href="<c:url value="/resources/css/admin_profile.css"/>">
 </head>
-<body>
-    <div>
-        <div class="row justify-content-around align-items-center adminroles">
-            <div class="col-lg-4 profile-infos">
-                <!-- header -->
-                <div class="input-group text-center">
-                    <a href="/BuyWith/A13admin" class=" btn text-dark input-group-text"><i class="feather-home"></i></a>
-                    <span class="form-control bg-transparent border-0 text-black-50 fs-4 fw-bold"><i class="feather-arrow-left-circle fw-bold"></i> Admin Page</span>
-                </div>
 
-                <div class="card form-info">
-                    <ul class="list-group text-center">
-                        <li class="list-group-item list-group-item-danger border-start-0 text-success fw-bold text-capitalize" id="fullname">Name</li>
-                        <li class="list-group-item list-group-item-danger border-start-0 text-success fw-bold text-capitalize" id="idnumber">Id Number</li>
-                        <li class="list-group-item list-group-item-danger border-start-0 text-success fw-bold text-capitalize" id="email">YourEmail</li>
-                        <li class="list-group-item list-group-item-danger border-start-0 text-success fw-bold text-capitalize" id="adminpassword">
-                            <input type="password" class="form-control bg-transparent border-0 text-center" value="Password">
-                        </li>
-                        <li class="list-group-item list-group-item-danger text-center border-start-0">
-                            <a href="" class="btn btn-success bg-transparent text-success fw-bolder" id="edit"><i class="feather-edit-2 fw-bold"></i> Edit Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-5 profile-edits" id="profiles">
-                <form:form action="/BuyWith/A8update" method="post" modelAttribute="admin"  class="form-edits" id="profileForm" autocomplete="off">
-                   <div>
-                        <label for="fname" class="form-label mt-2 ">Name</label>
-                        <form:input path="name"  class="form-control bg-transparent"  id="fname" placeholder="Enter Your Name" required='true'/>
-                    </div>
-                   
-                    <div>
-                        <label for="idno" class="form-label mt-2">ID Number</label>
-                        <form:input path="admin_id" type="text" class="form-control bg-transparent" id="idno" placeholder="EG01" value="" readonly="readonly" required='true'/>
-                    </div>
-                    <div>
-                        <label for="cemail" class="form-label mt-2">Email</label>
-                        <form:input path="email" type="email" class="form-control text-white bg-transparent" id="cemail" value="esterla@gmail.com" required='true'/>
-                    </div>
-                    <div>
-                        <label for="pwd" class="form-label mt-2">Password</label>
-                        <form:password path="password" type="password" class="form-control bg-transparent" id="pwd" placeholder="Enter change password" required='true'/>
-                    </div>
-                    <div class="mt-3">
-                        <input type="submit" class="btn btn-success bg-transparent text-success" id="updatebtn" value="Update">
-                        <input type="reset" class="btn btn-danger bg-transparent  text-danger ms-4" value="Reset">
-                    </div>
-                   
-                </form:form>
-            </div>
-        </div>
-    </div>
     
      <!-- bootstrap js2 & local-->
       <script type="text/javascript" src="<c:url value="resources/js/profile.js"/>"></script>
