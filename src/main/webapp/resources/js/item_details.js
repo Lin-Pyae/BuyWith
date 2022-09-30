@@ -5,6 +5,7 @@ let cartItems = document.getElementById("cart_items");
 // let addtoCart = document.getElementById("addtoCart");
 let cartBody = document.getElementById("cart-body");
 let order_submit = document.getElementById("order-submit");
+let checkoutSubmit = document.getElementById("checkoutSubmit");
 
 // let product_name = document.getElementById("product-name").innerText;
 // let product_price;
@@ -17,6 +18,7 @@ let quantity_on_cart=0 ;
 
 
 
+//end localstorage
 
 
 
@@ -94,26 +96,39 @@ function addtoCart(e){
     
     div.classList.add("d-flex","justify-content-around","my-3", "displayDel");
     div.innerHTML = `            
-                                <div>
-                               <div class="product_nameIn_cart">${product_name}</div>
+                                   <div>
+                               <div class="product_nameIn_cart">${product_name} <input type="hidden" name="pname" value="${product_name}"></div>
                                 <div class="delcontainer">
                                 <button class=" btn btn-sm btn-danger" onclick="cancel(this)">Cancel</button>
                                 </div>                               
                                 </div> 
 
-                                <div class="priceIncart">${ parseInt(product_price)}</div>
+                                <div class="priceIncart">${ parseInt(product_price)} <input type="hidden" name="pprice" value="${ parseInt(product_price)}"></div>
 
                                 <div>                        
-                                <input class="quan" type="number" min="0" value="${parseInt(quantity)}" onclick="quan(this)"/>
+                                <input class="quan" type="number" min="0" value="${parseInt(quantity)}" name="quantity" onclick="quan(this)"/>
                                 </div>
 
-                                <div class="total">${parseInt(product_price)*parseInt(quantity)}</div>
+                                <div class="total">${parseInt(product_price)*parseInt(quantity)} <input type="hidden" name="total" value="${parseInt(product_price)*parseInt(quantity)}"></div>
                             `;
                             order_submit.append(div); 
                             
   calTotal();
   
+  let totalQuantity = parseInt(product_price)*parseInt(quantity);
+  if(localStorage.getItem('data')===null){
+    let all =[];
+    all.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity});
+    localStorage.setItem('data',JSON.stringify(all));
+  }
   
+  else{
+    let localarray = localStorage.getItem('data');
+    let toarray = JSON.parse(localarray);
+    toarray.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity});
+    localStorage.setItem('data',JSON.stringify(toarray));
+   
+  }
   
   }
   
@@ -121,32 +136,43 @@ function addtoCart(e){
 }
 
 //get items in the cart from local storage
-// window.onload = ()=>{
-  // let product =  localStorage.getItem("product");
-  // product.forEach((x)=>{
-  //   let div = document.createElement("div");
-  //   div.classList.add("d-flex","justify-content-around","my-3", "displayDel");
-  //   div.innerHTML = `            
-  //                               <div>
-  //                              <div class="product_nameIn_cart">${x}</div>
-  //                               <div class="delcontainer">
-  //                               <button class=" btn btn-sm btn-danger" onclick="cancel(this)">Cancel</button>
-  //                               </div>                               
-  //                               </div> 
-  
-  //                               <div class="priceIncart">test</div>
-  
-  //                               <div>                        
-  //                               <input class="quan" type="number" min="0" value="2" onclick="quan(this)"/>
-  //                               </div>
-  
-  //                               <div class="total">10</div>
-  //                           `;
-  //                           order_submit.append(div); 
-  // })
-  // console.log("hello from cupcake");
-// }
+window.onload = ()=>{
 
+  console.log("hello from cupcake");
+  let retreiveobject = localStorage.getItem('data');
+  let cart_quantity = localStorage.getItem('cartQ');
+  cartItems.innerHTML = cart_quantity;
+  console.log(retreiveobject);
+  let toarray = JSON.parse(retreiveobject);
+  console.log(toarray);
+   
+  
+    toarray.forEach((x)=>{
+    let div = document.createElement("div");
+    div.classList.add("d-flex","justify-content-around","my-3", "displayDel");
+    div.innerHTML = `            
+                                <div>
+                               <div class="product_nameIn_cart">${x.p_name}</div>
+                                <div class="delcontainer">
+                                <button class=" btn btn-sm btn-danger" onclick="cancel(this)">Cancel</button>
+                                </div>                               
+                                </div> 
+  
+                                <div class="priceIncart">${parseInt(x.p_price)}</div>
+  
+                                <div>                        
+                                <input class="quan" type="number" min="0" value="${parseInt(x.q)}" onclick="quan(this)"/>
+                                </div>
+  
+                                <div class="total">${parseInt(x.p_price)*parseInt(x.q)}</div>
+                            `;
+                            order_submit.append(div); 
+                     
+  })
+ 
+  
+  
+}
 
 
 

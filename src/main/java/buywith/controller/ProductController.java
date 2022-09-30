@@ -245,6 +245,21 @@ public class ProductController {
 			return "admin002";
 		}
 		
+		@RequestMapping(value="/UproductSearch", method=RequestMethod.GET)
+		public String USearch(@RequestParam("product_id") String product_id,@RequestParam("product_name") String product_name,@RequestParam("category_name") String category_name, ModelMap model) {
+			
+			System.out.println("harry");
+			
+			ProductRequestDTO pdto = new ProductRequestDTO();
+			CategoryRequestDTO cdto = new CategoryRequestDTO();
+			pdto.setProduct_id(product_id);
+			pdto.setProduct_name(product_name);
+			cdto.setCategory_name(category_name);
+			ArrayList<ProductResponseDTO> list = dao.productSearch(pdto, cdto);
+			model.addAttribute("list", list);
+			return "user002";
+			
+		}
 		
 		@RequestMapping (value="/Pdelete/{product_id}", method=RequestMethod.GET)
 		public String Pdelete (@PathVariable String product_id,ModelMap model) {
@@ -270,36 +285,36 @@ public class ProductController {
 		}
 		
 		
-//		@RequestMapping(value="/imageDisplay", method= RequestMethod.GET)
-//		public void showImage(@RequestParam("id") String id, HttpServletResponse response,HttpServletRequest request) {
-//			
-//			try {
-//				System.out.println("Here win tal naw");
-//				ProductResponseDTO product = dao.selectOneProducts(id);
-//				System.out.println(product.getImg1());
-//				System.out.println("Hello ");
-//				
-//				response.setContentType("image/jpg");
-////				response.getOutputStream().write(product.getImg1());
-////				response.getOutputStream().close();
-//				
-//				Blob ph = Idao.getPhotoById(id);
-//				System.out.println("Si Si debug" + ph);
-//				byte[] bytes = ph.getBytes(1, (int) ph.length());
-//				
-//				InputStream inputStream = new ByteArrayInputStream(bytes);
-//				System.out.println("Input stream : "+inputStream);
-//				IOUtils.copy(inputStream, response.getOutputStream());	
-//				System.out.println("Hello end");
-//				
-//			} catch (IOException e) {
-//				System.out.println("error in display image due to " + e.getMessage());
-//			}
-//			 catch (SQLException e) {
-//				System.out.println("error in display image byte due to " + e.getMessage());
-//			}
-//		     
-//		}
+		@RequestMapping(value="/imageDisplay", method= RequestMethod.GET)
+		public void showImage(@RequestParam("id") String id, HttpServletResponse response,HttpServletRequest request) {
+			
+			try {
+				System.out.println("Here win tal naw");
+				ProductResponseDTO product = dao.selectOneProducts(id);
+				System.out.println(product.getImg1());
+				System.out.println("Hello ");
+				
+				response.setContentType("image/jpg");
+//			response.getOutputStream().write(product.getImg1());
+//				response.getOutputStream().close();
+				
+				Blob ph = Idao.getPhotoById(id);
+				System.out.println("Si Si debug" + ph);
+				byte[] bytes = ph.getBytes(1, (int) ph.length());
+				
+				InputStream inputStream = new ByteArrayInputStream(bytes);
+				System.out.println("Input stream : "+inputStream);
+				IOUtils.copy(inputStream, response.getOutputStream());	
+				System.out.println("Hello end");
+				
+			} catch (IOException e) {
+				System.out.println("error in display image due to " + e.getMessage());
+			}
+			 catch (SQLException e) {
+				System.out.println("error in display image byte due to " + e.getMessage());
+			}
+		     
+		}
 		
 	
 	

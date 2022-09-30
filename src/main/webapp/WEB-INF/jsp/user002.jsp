@@ -80,7 +80,7 @@ body{
 <nav class="w3-sidebar w3-bar-block w3-text-black w3-light-grey w3-collapse w3-top" style="z-index:3;width:250px; background-color: #f3d2b3!important;" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide" style="position:relative; top:7px"><b>LOGO</b></h3>
+    <h3 class="w3-wide" style="position:relative; top:7px"><b>Buy With</b></h3>
   </div>
   <div class=" w3-large w3-text-black w3-light-grey" style="font-weight:bold; padding-top:3px">
     <a href="/BuyWith/A10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="margin-top:-3px; background-color: #e91e63!important;">Birthday Cakes</a>
@@ -157,8 +157,10 @@ body{
             <a class="nav-link" href="#">Shop</a>
           </li>      -->
         </ul>
-        <form class="d-flex ms-lg-5" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form action="/BuyWith/UproductSearch" method="get" class="d-flex ms-lg-5" role="search">
+                  <input type="text" name="product_name" class="form-control me-2" id="inputPassword2" placeholder="Search" aria-label="Search">
+        
+          
           <button class="search btn btn-secondary" type="submit"><i class="bi bi-search"></i></button>
         </form>  
 
@@ -197,7 +199,7 @@ body{
 
       <button type="button" class="btn  position-relative"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <i class="bi bi-cart3 align-self-center" style="font-size:30px;"></i>
-    <span class="position-absolute  start-100 translate-middle badge rounded-pill bg-danger" style="top: 17px;" id="cart_items">
+    <span class="position-absolute d-none  start-100 translate-middle badge rounded-pill bg-danger" style="top: 17px;" id="cart_items">
       0
     </span>
   </button> 
@@ -369,12 +371,12 @@ body{
    
     <img src='<c:url value="/resources/images/shop.jpg" ></c:url>' alt="Cake" style="width:100%; height:100%;" class="name"/>
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">Shop Name</h1>
-      <h1 class="w3-hide-large w3-hide-medium">Shop Name</h1>
-      <h1 class="w3-hide-small">fsdklfsdfnsmf</h1>
+      <h1 class="w3-jumbo w3-hide-small">Buy With</h1>
+      <h1 class="w3-hide-large w3-hide-medium">Buy With</h1>
+      <h1 class="w3-hide-small">Cake Shop</h1>
     </div>
   </div>
-   <h1 style="font-family:Georgia; color:#B82C54">Cakes</h1>
+   <h1 style="font-family:Georgia; color:#B82C54">Birthday Cakes</h1>
   
 <h1 style="color:red;text-align:center" >${message}</h1>
   <!-- Product grid -->
@@ -440,9 +442,9 @@ body{
 
           <div class="col-3">
             <h4>Store</h4>
-            <p><i class="fa fa-fw fa-map-marker w3-pink"></i><b>Company Name</b> </p>
-            <p><i class="fa fa-fw fa-phone w3-pink"></i><b> 00000000</b></p>
-            <p><i class="fa fa-fw fa-envelope w3-pink"></i> <b>shopname@gmail.com</b></p>
+            <p><i class="fa fa-fw fa-map-marker w3-pink"></i><b>Buy With</b> </p>
+            <p><i class="fa fa-fw fa-phone w3-pink"></i><b>+959874342456</b></p>
+            <p><i class="fa fa-fw fa-envelope w3-pink"></i> <b>buywith@gmail.com</b></p>
             <h4>We accept</h4>
             <p><i class="fa fa-fw fa-cc-amex w3-pink"></i>Cash on delivery</p>
             <br>

@@ -71,7 +71,7 @@ w3-large a.macron:hover{
 <nav class="w3-sidebar w3-bar-block w3-text-black w3-light-grey w3-collapse w3-top" style="z-index:3;width:250px; background-color: #f3d2b3!important;" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide" style="position:relative; top:7px"><b>LOGO</b></h3>
+    <h3 class="w3-wide" style="position:relative; top:7px"><b>Buy With</b></h3>
   </div>
   <div class=" w3-large w3-text-black w3-light-grey" style="font-weight:bold; padding-top:3px">
     <a href="/BuyWith/A10shop" class="w3-bar-item w3-button w3-pink sidebar_item" style="background-color: #f3d2b3!important;color: black!important; margin-top: -3px;">Birthday Cakes</a>
@@ -185,7 +185,7 @@ w3-large a.macron:hover{
 
   <button type="button" class="btn  position-relative"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <i class="bi bi-cart3 align-self-center" style="font-size:30px;"></i>
-    <span class="position-absolute  start-100 translate-middle badge rounded-pill bg-danger" style="top: 17px;" id="cart_items">
+    <span class="position-absolute d-none  start-100 translate-middle badge rounded-pill bg-danger" style="top: 17px;" id="cart_items">
       0
     </span>
   </button> 
@@ -347,9 +347,9 @@ w3-large a.macron:hover{
   <div class="w3-display-container w3-container w3-black">
     <img src='<c:url value="/resources/images/shop.jpg" ></c:url>' alt="Cake" style="width:100%;height:100%;" class="name"/> 
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">Shop Name</h1>
-      <h1 class="w3-hide-large w3-hide-medium">Shop Name</h1>
-      <h1 class="w3-hide-small">fsdklfsdfnsmf</h1>
+      <h1 class="w3-jumbo w3-hide-small">Buy With</h1>
+      <h1 class="w3-hide-large w3-hide-medium">Buy With</h1>
+      <h1 class="w3-hide-small">Cake Shop</h1>
     </div>
   </div>
    <h1 style="font-family:Georgia; color:#B82C54">Macrons</h1>
@@ -409,16 +409,16 @@ w3-large a.macron:hover{
 
         <div class="col-3">
           <h4>Store</h4>
-          <p><i class="fa fa-fw fa-map-marker w3-pink"></i><b>Company Name</b> </p>
-          <p><i class="fa fa-fw fa-phone w3-pink"></i><b> 00000000</b></p>
-          <p><i class="fa fa-fw fa-envelope w3-pink"></i> <b>shopname@gmail.com</b></p>
-          <h4>We accept</h4>
-          <p><i class="fa fa-fw fa-cc-amex w3-pink"></i>Cash on delivery</p>
-          <br>
-          <i class="fa fa-facebook w3-hover-opacity w3-large w3-pink"></i>
-          <i class="fa fa-instagram w3-hover-opacity w3-large w3-pink"></i>
-          <i class="fa fa-pinterest-p w3-hover-opacity w3-large w3-pink"></i>
-          <i class="fa fa-twitter w3-hover-opacity w3-large w3-pink"></i>
+         <p><i class="fa fa-fw fa-map-marker w3-pink"></i><b>Buy With</b> </p>
+            <p><i class="fa fa-fw fa-phone w3-pink"></i><b>+959874342456</b></p>
+            <p><i class="fa fa-fw fa-envelope w3-pink"></i> <b>buywith@gmail.com</b></p>
+            <h4>We accept</h4>
+            <p><i class="fa fa-fw fa-cc-amex w3-pink"></i>Cash on delivery</p>
+            <br>
+            <i class="fa fa-facebook w3-hover-opacity w3-large w3-pink"></i>
+            <i class="fa fa-instagram w3-hover-opacity w3-large w3-pink"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity w3-large w3-pink"></i>
+            <i class="fa fa-twitter w3-hover-opacity w3-large w3-pink"></i>
         </div>
 
         <div class="col-4">
