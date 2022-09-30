@@ -5,16 +5,18 @@ public class CartItemsBean {
 	private int user_id;
 	private int product_id;
 	private String product_name;
+	private int quantity;
+	private String productName;
+	private int price;
+	private int total;
+	
 	public String getProduct_name() {
 		return product_name;
 	}
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
-	private int quantity;
-	private String productName;
-	private int price;
-	private int total;
+	
 	public String getProductName() {
 		return productName;
 	}

@@ -54,15 +54,14 @@ public class CheckOutController {
 	}
 	
 	@RequestMapping (value="/tocheckOut", method=RequestMethod.GET)
-	public String checkOut(@RequestParam("pname") String name,@RequestParam("pprice") int price,@RequestParam("quantity") int quantity, @RequestParam("total") int total ,ModelMap model) {
-		CheckOutRequestDTO dto = new CheckOutRequestDTO();
-		CartItemsBean cb = new CartItemsBean();
-		cb.setProduct_name(name);
-		cb.setPrice(price);
-		cb.setQuantity(quantity);
-		cb.setTotal(total);
-
-		model.addAttribute("product",cb);
+	public String checkOut() {		
+//		CartItemsBean cb = new CartItemsBean();
+//		cb.setProduct_name(name);
+//		cb.setPrice(price);
+//		cb.setQuantity(quantity);
+//		cb.setTotal(total);
+//
+//		model.addAttribute("product",cb);
 		return "user008";
 	}
 	

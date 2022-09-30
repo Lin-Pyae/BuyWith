@@ -10,12 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
-    <link href="./checkstyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="<c:url value="/resources/css/checkstyle.css"/>">
     <!-- bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- feather icon -->
-    <link href="./../node_modules/feathericon/feather.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<c:url value="/resources/css/feathericon/feather.css"/>">
 </head>
 <body>
     <!-- back button -->
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-6 mt-2">
                     <label for="ph" class="form-label">Phone Number</label>
-                    <input type="number" class="form-control" id="ph" value="${user.getPhone_number()}" readonly />
+                    <input type="number" class="form-control" id="ph" value="${user.getPhone_number()}" placeholder="${user.getPhone_number()}" readonly />
                 </div>
                 
                <%--  <div class="col-6 mt-2">
@@ -96,25 +96,24 @@
             <div class="col-4 orders">
                 <p class="fw-bold col-12 mb-0">Your Order</p>
                 <table class="mt-2 table table-borderless orderdetails">
+                <thead>
                     <tr>
-                        <td>Order Id</td>
-                        <td class="text-center"> ${product.total}</td>
-                        <td class="text-center">#2345</td>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th> 
                     </tr>
-                    <tr>
-                        <td>Macron</td>
-                        <td class="text-center">${product.price}</td>
-                        <td class="text-center">200</td>
-                    </tr>
-                    <tr>
-                        <td>Cupcake</td>
-                        <td class="text-center">${product.quantity}</td>
-                        <td class="text-center">200</td>
-                    </tr>
+                   </thead>
+                    <tbody id="products">
+                        
+                    </tbody>
+                   
                     <tr class="totals">
+                    <th></th>
+                    <th></th>
                         <th>Total</th>
-                        <td class="text-center">${product.product_name}</td>
-                        <td class="text-center">400</td>
+                      
+                        <td id="total"></td>
                     </tr>
 
                 </table>
@@ -131,6 +130,7 @@
     
 
     <!-- bootstrap js -->
+    <script type="text/javascript" src="<c:url value="resources/js/checkout.js"/>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
     <!-- javascript -->
