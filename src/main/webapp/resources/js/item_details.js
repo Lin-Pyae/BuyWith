@@ -65,11 +65,14 @@ function decrease(e){
 function addtoCart(e){
   // add to cart
   quantity_on_cart = parseInt(cartItems.innerText);
+ 
+let product_id = e.parentNode.parentNode.parentNode.querySelector(".product_id").innerText;
+console.log("product id: " + product_id);
+  
   let product_name = e.parentNode.parentNode.parentNode.querySelector(".product-name").innerText;
   let product_price = e.parentNode.parentNode.parentNode.querySelector(".product_price").innerText;
   let quantity = parseInt(e.parentNode.parentNode.parentNode.querySelector(".quantity").innerText);
-  console.log(e.parentNode.parentNode.parentNode.querySelector(".quantity").innerText);
-  
+ 
 
   if(quantity === 0){
     cartItems.innerText= quantity_on_cart + quantity;
@@ -97,7 +100,11 @@ function addtoCart(e){
     div.classList.add("d-flex","justify-content-around","my-3", "displayDel");
     div.innerHTML = `            
                                    <div>
-                               <div class="product_nameIn_cart">${product_name} <input type="hidden" name="pname" value="${product_name}"></div>
+                               <div class="product_nameIn_cart">${product_name}  ${product_id}<input type="hidden" name="pname" value="${product_name}">
+								
+								</div>
+								
+								
                                 <div class="delcontainer">
                                 <button class=" btn btn-sm btn-danger" onclick="cancel(this)">Cancel</button>
                                 </div>                               
@@ -114,18 +121,19 @@ function addtoCart(e){
                             order_submit.append(div); 
                             
   calTotal();
+console.log("this is product id pid:" + product_id);
   
   let totalQuantity = parseInt(product_price)*parseInt(quantity);
   if(localStorage.getItem('data')===null){
     let all =[];
-    all.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity});
+    all.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity,pId:product_id});
     localStorage.setItem('data',JSON.stringify(all));
   }
   
   else{
     let localarray = localStorage.getItem('data');
     let toarray = JSON.parse(localarray);
-    toarray.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity});
+    toarray.push({p_name:product_name,p_price:product_price,q:quantity,total:totalQuantity,pId:product_id});
     localStorage.setItem('data',JSON.stringify(toarray));
    
   }

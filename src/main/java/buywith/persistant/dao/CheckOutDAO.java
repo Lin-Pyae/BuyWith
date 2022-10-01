@@ -29,18 +29,42 @@ public class CheckOutDAO {
 	}
 	
 	
-	public int insertData (CheckOutRequestDTO dto) {
-		int result=0;
-		String sql="insert into cart_items (user_id,product_id,quantity)"+"(?,?,?)";
+	public int insertintoOrder (CheckOutRequestDTO dto) {
+		int result=1;
+		String sql="insert into orders (users_user_id,total_price) values (?,?)";
 		try {
-			PreparedStatement ps=con.prepareStatement(sql);
+			PreparedStatement ps=con.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
 			
 			ps.setInt(1, dto.getUser_id());
-			ps.setString(2, dto.getProduct_id());
-			ps.setInt(3, dto.getQuantity());
+			ps.setDouble(2, dto.getTotal_price());
 			result=ps.executeUpdate();
+			ResultSet generatedKeys = ps.getGeneratedKeys();
+			System.out.println(generatedKeys);
+		result =	(int) generatedKeys.getLong(1);
+		if(generatedKeys.next()) {
+			result = generatedKeys.getInt(1);
+			return result;
+		}
+			
 		}catch(SQLException e) {
-			System.out.println("Database error");
+			System.out.println("Insert order fail due to " + e.getMessage());
+		}
+		return result;
+	}
+	
+	public int insertIntoOrderDetail(CheckOutRequestDTO dto,int order_id) {
+		int result =0;
+		String query = "insert into order_details (products_product_id,orders_order_id,quantity,subtotal) values(?,?,?,?)";
+		PreparedStatement ps1;
+		try {
+			ps1 = con.prepareStatement(query);
+			ps1.setString(1, dto.getProduct_id());
+			ps1.setInt(2, order_id);
+			ps1.setInt(3, dto.getQuantity());
+			ps1.setDouble(4, dto.getAll_price());
+			result =ps1.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error in insert into order detail due to " + e.getMessage());
 		}
 		return result;
 	}
@@ -149,7 +173,7 @@ public class CheckOutDAO {
 		
 		ps.setInt(1, dto.getCart_id());
 		ps.setString(2, dto.getOrderNote());
-		ps.setDouble(3, dto.getTotalPrice());
+		ps.setDouble(3, dto.getAlltotalPrice());
 		ps.setString(4, dto.getPayment());
 		
 	} catch(SQLException e) {
@@ -168,9 +192,9 @@ public class CheckOutDAO {
 			while(rs.next()) {
 				res.setOrderId(rs.getInt("order_id"));
 				res.setCart_items_cart_id(rs.getInt("cart_items_cart_id"));
-				res.setOrderNote(rs.getString("order_note"));
+				
 				res.setTotalPrice(rs.getDouble("total_price"));
-				res.setPayment(rs.getString("payment"));
+				
 			}
 			
 		}catch(SQLException e) {
@@ -180,22 +204,21 @@ public class CheckOutDAO {
 	}
 	
 	public ArrayList<CheckOutResponseDTO> selectAllorder(){
-		ArrayList<CheckOutResponseDTO> list=new ArrayList();
+		ArrayList<CheckOutResponseDTO> list=new ArrayList<CheckOutResponseDTO>();
 		String sql="select * from orders";
 		try {
 			PreparedStatement ps=con.prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
 				CheckOutResponseDTO res=new CheckOutResponseDTO();
+				res.setUserId(rs.getInt("users_user_id"));
 				res.setOrderId(rs.getInt("order_id"));
-				res.setCart_items_cart_id(rs.getInt("cart_items_cart_id"));
-				res.setOrderNote(rs.getString("order_note"));
-				res.setTotalPrice(rs.getDouble("total_price"));
-				res.setPayment(rs.getString("payment"));
+				res.setTotal_price(rs.getDouble("total_price"));
+			
 				list.add(res);
 			}
 		}catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Error in select all orders due to "+ e.getMessage());
 		}
 		
 		return list;

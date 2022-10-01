@@ -2,6 +2,8 @@ package buywith.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -54,15 +56,36 @@ public class CheckOutController {
 	}
 	
 	@RequestMapping (value="/tocheckOut", method=RequestMethod.GET)
-	public String checkOut() {		
-//		CartItemsBean cb = new CartItemsBean();
-//		cb.setProduct_name(name);
-//		cb.setPrice(price);
-//		cb.setQuantity(quantity);
-//		cb.setTotal(total);
-//
-//		model.addAttribute("product",cb);
+	public String TocheckOut() {		
+
 		return "user008";
+	}
+	
+	@RequestMapping(value="/checkout", method=RequestMethod.POST)
+	public String Checkout(@RequestParam("userId") int userId, @RequestParam("allTotal") int alltotal,HttpServletRequest req, ModelMap map) {
+		 String[] productName=req.getParameterValues("pName");
+		 String[] price =req.getParameterValues("pPrice") ;
+		 String[] quantity = req.getParameterValues("pq");
+		 String[] productTotal = req.getParameterValues("ptotal");
+		 String[] productId = req.getParameterValues("pId");
+		 
+		 CheckOutRequestDTO dto = new CheckOutRequestDTO();
+		 dto.setUser_id(userId);
+		 dto.setTotal_price(alltotal);
+		 
+		 int order_id = dao.insertintoOrder(dto);	
+		 int length = price.length;
+		 System.out.println(productId[0]);
+		 for(int i=0; i<length; i++) {
+			 dto.setProduct_id(productId[i]);
+			 
+			 dto.setOrder_id(order_id);
+			 dto.setQuantity(Integer.valueOf(quantity[i]));
+			 dto.setAll_price(Integer.valueOf(productTotal[i]));
+			 dao.insertIntoOrderDetail(dto, order_id);
+			 
+		 }
+		return "user002";
 	}
 	
 

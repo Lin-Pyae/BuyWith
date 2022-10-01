@@ -16,8 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import buywith.model.AdminBean;
 import buywith.persistant.dao.AdminDAO;
+import buywith.persistant.dao.CheckOutDAO;
 import buywith.persistant.dto.AdminRequestDTO;
 import buywith.persistant.dto.AdminResponseDTO;
+import buywith.persistant.dto.CheckOutResponseDTO;
 import buywith.persistant.dto.ProductResponseDTO;
 
 @Controller
@@ -26,6 +28,8 @@ public class AdminController {
 	@Autowired
 	private AdminDAO dao;
 	
+	@Autowired
+	private CheckOutDAO cdao;
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String ViewWelcome() {
 		
@@ -161,7 +165,12 @@ public class AdminController {
 		return "user002";
 	}
 
-	
+	@RequestMapping(value="/toOrderList", method= RequestMethod.GET)
+	public String ToOrderList(ModelMap model) {
+		ArrayList<CheckOutResponseDTO> list = cdao.selectAllorder();
+		model.addAttribute("list", list);
+		return "admin004";
+	}
 	
 	
 	

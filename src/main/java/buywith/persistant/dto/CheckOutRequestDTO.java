@@ -5,7 +5,7 @@ public class CheckOutRequestDTO {
 	private int orderId;
 	 private int cart_items_cart_id;
 	 private String orderNote;
-	 private double totalPrice;
+	
 	 private String payment;
 	 private String product_id;
 		private int order_id;
@@ -15,6 +15,14 @@ public class CheckOutRequestDTO {
 		private int cart_id;
 		private double total_price;
 		private double all_price;
+		 private double AlltotalPrice;
+		 
+		public double getAlltotalPrice() {
+			return AlltotalPrice;
+		}
+		public void setAlltotalPrice(double alltotalPrice) {
+			AlltotalPrice = alltotalPrice;
+		}
 		public int getOrderId() {
 			return orderId;
 		}
@@ -27,12 +35,7 @@ public class CheckOutRequestDTO {
 		public void setOrderNote(String orderNote) {
 			this.orderNote = orderNote;
 		}
-		public double getTotalPrice() {
-			return totalPrice;
-		}
-		public void setTotalPrice(double totalPrice) {
-			this.totalPrice = totalPrice;
-		}
+		
 		public String getPayment() {
 			return payment;
 		}

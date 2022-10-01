@@ -5,9 +5,9 @@ public class CheckOutResponseDTO {
 	private String product_name;
 	private int orderId;
 	 private int cart_items_cart_id;
-	 private String orderNote;
+	
 	 private double totalPrice;
-	 private String payment;
+
 	 private String product_id;
 		private int order_id;
 		private int order_detail_id;
@@ -16,30 +16,27 @@ public class CheckOutResponseDTO {
 		private int cart_id;
 		private double total_price;
 		private double all_price;
+		private int userId;
+		public int getUserId() {
+			return userId;
+		}
+		public void setUserId(int userId) {
+			this.userId = userId;
+		}
 		public int getOrderId() {
 			return orderId;
 		}
 		public void setOrderId(int orderId) {
 			this.orderId = orderId;
 		}
-		public String getOrderNote() {
-			return orderNote;
-		}
-		public void setOrderNote(String orderNote) {
-			this.orderNote = orderNote;
-		}
+		
 		public double getTotalPrice() {
 			return totalPrice;
 		}
 		public void setTotalPrice(double totalPrice) {
 			this.totalPrice = totalPrice;
 		}
-		public String getPayment() {
-			return payment;
-		}
-		public void setPayment(String payment) {
-			this.payment = payment;
-		}
+		
 		public String getProduct_id() {
 			return product_id;
 		}

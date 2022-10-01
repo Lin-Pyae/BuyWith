@@ -248,32 +248,31 @@ body{
 
 <!-- another offcanvas here -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="z-index: 6000;">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
-  </div>
-  <div class="offcanvas-body" id="cart-body">
-    <div id="order-submit">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
+</div>
+<div class="offcanvas-body" id="cart-body">
+<form action="/BuyWith/tocheckOut">
+<div id="order-submit">
 
-        <div class=" d-flex justify-content-around fw-bolder fs-5">
-          <div>Product</div> 
-          <div for="">Price</div>
-          <div for="">Quantity</div>
-          <div for="">Total hello</div>
-        </div>
+    <div class=" d-flex justify-content-around fw-bolder fs-5">
+      <div>Product</div> 
+      <div for="">Price</div>
+      <div for="">Quantity</div>
+      <div for="">Total</div>
+    </div>
 
-    </div>
-    <div class=" d-flex justify-content-between">
-      <h5>Total</h5>
-      <p id="finalTotal"></p>
-    </div>
-    
-    
-  <a href="#" class="btn btn-primary" style="float:right">Checkout</a>
-  
-  </div>
-  
-  
+</div>
+<input type="submit" class="btn btn-primary" id="checkoutSubmit"  style="float:right" value="Checkout">
+</form>
+<div class=" d-flex justify-content-around">
+  <h5 class=" fw-bolder"> Total </h5>
+  <p id="finalTotal"></p>
+</div>
+
+
+</div>
 </div>
 
 
@@ -391,13 +390,13 @@ body{
         
       <!--   <img src="./shop page/cupcake1.jpg" class="img" style="width:100%"> -->
         <img src="/BuyWith/imageDisplay?id=${cake.product_id}" class="img" style="width:100%"/>
-        
+       
          <div class="w3-display-middle w3-display-hover ">
           <button class="w3-button w3-pink" id="addtoCart" onclick="addtoCart(this)">Add to cart <i class="fa fa-shopping-cart "></i></button>
           </div>
         </div>
         <div style="margin-bottom: 16px; display: flex; justify-content: space-between;">
-          <div><b class="product-name">${cake.product_name}</b><br><b class="product_price">${cake.price}</b></div>
+          <div> <b class="product-name">${cake.product_name}</b> <br> <b class="product_price">${cake.price}</b> <br> <b class="product_id">${cake.product_id}</b></div>
           <div>
             <div id="quantity_container" class=" col-4 align-self-center">
             <button onclick="decrease(this)" class="quantity_items dbtn" id="dbtn" style="border:none;"><i class="bi bi-dash fs-5 fw-bolder"></i></button>

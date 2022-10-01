@@ -56,7 +56,7 @@
 
             <div class="col-lg-4 profiles">
                 <div class="d-flex align-items-center justify-content-end profiles-details">
-                    <a href="#"><i class="far fa-bell fs-5 text-dark noti-items"></i></a> <!--Qty-->
+                    <a href="/BuyWith/toOrderList"><i class="far fa-bell fs-5 text-dark noti-items"></i></a> <!--Qty-->
                     <a href="/BuyWith/suu"><i class="far fa-envelope-open fs-5 text-dark noti-items"></i></a> <!--sugesssion-->
 
                     <!-- profile -->

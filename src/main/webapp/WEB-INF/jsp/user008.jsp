@@ -32,12 +32,12 @@
     <div class="container mt-5">
         <p class="fs-5">Personal information</p>
 
-        <form:form action="/BuyWith/checkout" method="post" modelAttribute="bean" class="mt-3 col-12 row justify-content-between">
+        <form action="/BuyWith/checkout" method="post" class="mt-3 col-12 row justify-content-between">
             <!-- personal information -->
             <div class="col-6 row" >
                 <div class="col-6">
                     <label for="id" class="form-label">Customer Id</label>
-                    <input type="text" class="form-control" id="id" value="${user.getUser_id()}" readonly>
+                    <input type="text" class="form-control" id="id" name="userId" value="${user.getUser_id()}" readonly>
                 </div>
                 <div class="col-6">
                     <label for="name" class="form-label">Customer Name</label>
@@ -85,10 +85,7 @@
                     <input type="radio" class="form-check-inline ms-2 me-2" value="Cash" disabled>Debit
                 </div>
                 <div class="col-12 mt-2">
-                    <div class="row justify-content-center">
-                        <a class="col-3 btn btn-success" href="#">Completed</a>
-                        <a class="col-3 btn btn-danger ms-4" href="#" id="back">Back</a>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -113,20 +110,28 @@
                     <th></th>
                         <th>Total</th>
                       
+                      <input type="hidden" name="allTotal" id="alltotal">
                         <td id="total"></td>
                     </tr>
 
+					
                 </table>
-            
+           
+            <input type="submit" value="Confirm Order" class=" btn btn-success" id="confirm">
                 <!-- order id -->
                 <!-- product name -->
                 <!-- product price -->
                 <!-- total -->
                 <!-- total price -->
             </div>
-        </form:form>
+            
+                        
+                        
+                    
+        </form>
     </div>
-
+    
+   
     
 
     <!-- bootstrap js -->

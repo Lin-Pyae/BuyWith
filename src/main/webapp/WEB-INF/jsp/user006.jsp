@@ -231,6 +231,7 @@ w3-large a.topper:hover{
 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
 </div>
 <div class="offcanvas-body" id="cart-body">
+<form action="/BuyWith/tocheckOut">
 <div id="order-submit">
 
     <div class=" d-flex justify-content-around fw-bolder fs-5">
@@ -241,12 +242,14 @@ w3-large a.topper:hover{
     </div>
 
 </div>
+<input type="submit" class="btn btn-primary" id="checkoutSubmit"  style="float:right" value="Checkout">
+</form>
 <div class=" d-flex justify-content-around">
   <h5 class=" fw-bolder"> Total </h5>
   <p id="finalTotal"></p>
 </div>
 
-<a href="#" class="btn btn-primary" style="float:right">Checkout</a>
+
 </div>
 </div>
 
@@ -366,7 +369,7 @@ w3-large a.topper:hover{
           </div>
         </div>
         <div style="margin-bottom: 16px; display: flex; justify-content: space-between;">
-          <div><b class="product-name">${cake.product_name}</b><br><b class="product_price">${cake.price}</b></div>
+           <div> <b class="product-name">${cake.product_name}</b> <br> <b class="product_price">${cake.price}</b> <br> <b class="product_id">${cake.product_id}</b></div>
           <div>
             <div id="quantity_container" class=" col-4 align-self-center">
             <button onclick="decrease(this)" class="quantity_items dbtn" id="dbtn" style="border:none;"><i class="bi bi-dash fs-5 fw-bolder"></i></button>
